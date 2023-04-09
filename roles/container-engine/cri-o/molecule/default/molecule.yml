@@ -15,6 +15,14 @@ platforms:
       - kube_control_plane
       - kube_node
       - k8s_cluster
+  - name: ubuntu22
+    box: generic/ubuntu2204
+    cpus: 2
+    memory: 1024
+    groups:
+      - kube_control_plane
+      - kube_node
+      - k8s_cluster
   - name: almalinux8
     box: almalinux/8
     cpus: 2
