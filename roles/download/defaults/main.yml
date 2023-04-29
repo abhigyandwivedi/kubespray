@@ -113,7 +113,7 @@ calico_apiserver_version: "{{ calico_version }}"
 typha_enabled: false
 calico_apiserver_enabled: false
 
-flannel_version: "v0.20.2"
+flannel_version: "v0.21.4"
 flannel_cni_version: "v1.2.0"
 cni_version: "v1.2.0"
 weave_version: 2.8.1
@@ -126,9 +126,9 @@ cilium_enable_hubble: false
 kube_ovn_version: "v1.10.7"
 kube_ovn_dpdk_version: "19.11-{{ kube_ovn_version }}"
 kube_router_version: "v1.5.1"
-multus_version: "v3.8-{{ image_arch }}"
-helm_version: "v3.11.2"
-nerdctl_version: "1.0.0"
+multus_version: "v3.8"
+helm_version: "v3.11.3"
+nerdctl_version: "1.3.1"
 krew_version: "v0.4.3"
 skopeo_version: v1.10.0
 
@@ -148,9 +148,9 @@ crictl_supported_versions:
 crictl_version: "{{ crictl_supported_versions[kube_major_version] }}"
 
 crio_supported_versions:
-  v1.26: v1.26.0
-  v1.25: v1.25.1
-  v1.24: v1.24.3
+  v1.26: v1.26.3
+  v1.25: v1.25.3
+  v1.24: v1.24.5
 crio_version: "{{ crio_supported_versions[kube_major_version] }}"
 
 yq_version: "v4.33.2"
@@ -201,21 +201,21 @@ crictl_checksums:
 
 crio_archive_checksums:
   arm:
-    v1.26.0: 0
-    v1.25.1: 0
-    v1.24.3: 0
+    v1.26.3: 0
+    v1.25.3: 0
+    v1.24.5: 0
   arm64:
-    v1.26.0: 8605b166d00c674e6363ee2336600fa6c6730a6a724f03ab3b72a0d5f9efcd1d
-    v1.25.1: add26675dc993b292024d007fd69980d8d1e75c675851d0cb687fe1dfd1f3008
-    v1.24.3: d8040602e03c90e4482b4ce97b63c2cf1301cd2afb0aa722342f40f3537a1a1f
+    v1.26.3: c85ea3f6476b354af0b15ad7ab80ae202d082ed0c83f1a323b48352c4698db9a
+    v1.25.3: 09cabe5499a12013618fb5d8d9c71df56d68f54f6cbe67cab75e6d886eb30214
+    v1.24.5: 677c5a01c3352a1095df4d5b2502eb26fa423ec15243b96bf81dc447a3e80062
   amd64:
-    v1.26.0: 79837d8b7af95547b92dbab105268dd6382ce2a7afbddad93cc168ab0ca766c8
-    v1.25.1: 49f98a38805740c40266a5bf3badc28e4ca725ccf923327c75c00fccc241f562
-    v1.24.3: 43f6e3a7ad6ae8cf05ed0f1e493578c28abf6a798aedb8ee9643ff7c25a68ca3
+    v1.26.3: 942772081d9cd4bd0c07e466439b76a1ca95d3f10a7b53dc524d2946b2b17a71
+    v1.25.3: b990709ca45784726489aac77bb1e309d9148944483870d737a3a595f6305491
+    v1.24.5: 32c5f577c53c8e6d516e75127079798a35988c637ca1ebb050734d66a52353c5
   ppc64le:
-    v1.26.0: 0
-    v1.25.1: 0
-    v1.24.3: 0
+    v1.26.3: 0
+    v1.25.3: 0
+    v1.24.5: 0
 
 # Checksum
 # Kubernetes versions above Kubespray's current target version are untested and should be used with caution.
@@ -625,7 +625,7 @@ ciliumcli_binary_checksums:
     v0.12.5: 0
 
 calico_crds_archive_checksums:
-  v3.25.1: 361b0e0e6d64156f0e1b2fbfd18d13217d188eee614eec5de6b05ac0deaab372
+  v3.25.1: 4d6b6653499f24f80a85a0a7dac28d9571cabfa25356b08f3b438fd97e322e2d
   v3.25.0: 117b4493ad933f24ea6fb82eabfad300da2dd926995bb8c55336595d38c72881
   v3.24.5: 10320b45ebcf4335703d692adacc96cdd3a27de62b4599238604bd7b0bedccc3
   v3.23.3: d25f5c9a3adeba63219f3c8425a8475ebfbca485376a78193ec1e4c74e7a6115
@@ -665,13 +665,13 @@ krew_archive_checksums:
 
 helm_archive_checksums:
   arm:
-    v3.11.2: 444b65100e224beee0a3a3a54cb19dad37388fa9217ab2782ba63551c4a2e128
+    v3.11.3: 0816db0efd033c78c3cc1c37506967947b01965b9c0739fe13ec2b1eea08f601
   arm64:
-    v3.11.2: 0a60baac83c3106017666864e664f52a4e16fbd578ac009f9a85456a9241c5db
+    v3.11.3: 9f58e707dcbe9a3b7885c4e24ef57edfb9794490d72705b33a93fa1f3572cce4
   amd64:
-    v3.11.2: 781d826daec584f9d50a01f0f7dadfd25a3312217a14aa2fbb85107b014ac8ca
+    v3.11.3: ca2d5d40d4cdfb9a3a6205dd803b5bc8def00bd2f13e5526c127e9b667974a89
   ppc64le:
-    v3.11.2: 04cbb8d053f2d8023e5cc6b771e9fa384fdd341eb7193a0fb592b7e2a036bf3d
+    v3.11.3: 9f0a8299152ec714cee7bdf61066ba83d34d614c63e97843d30815b55c942612
 
 cri_dockerd_archive_checksums:
   arm:
@@ -793,13 +793,13 @@ gvisor_containerd_shim_binary_checksums:
 
 nerdctl_archive_checksums:
   arm:
-    1.0.0: 8fd283a2f2272b15f3df43cd79642c25f19f62c3c56ad58bb68afb7ed92904c2
+    1.3.1: ed24086dbea22612dbcc3d14ee6f1d152b0eb6905bd8c84d3413c1f4c8d45d10
   arm64:
-    1.0.0: 27622c9d95efe6d807d5f3770d24ddd71719c6ae18f76b5fc89663a51bcd6208
+    1.3.1: 9e82a6a34c89d3e6a65dc8d77a3723d796d71e0784f54a0c762a2a1940294e3b
   amd64:
-    1.0.0: 3e993d714e6b88d1803a58d9ff5a00d121f0544c35efed3a3789e19d6ab36964
+    1.3.1: 3ab552877100b336ebe3167aa57f66f99db763742f2bce9e6233644ef77fb7c9
   ppc64le:
-    1.0.0: 2fb02e629a4be16b194bbfc64819132a72ede1f52596bd8e1ec2beaf7c28c117
+    1.3.1: 21700f5fe8786ed7749b61b3dbd49e3f2345461e88fe2014b418a1bdeffbfb99
 
 containerd_archive_checksums:
   arm:
@@ -1038,9 +1038,9 @@ cilium_hubble_relay_image_tag: "{{ cilium_version }}"
 cilium_hubble_certgen_image_repo: "{{ quay_image_repo }}/cilium/certgen"
 cilium_hubble_certgen_image_tag: "v0.1.8"
 cilium_hubble_ui_image_repo: "{{ quay_image_repo }}/cilium/hubble-ui"
-cilium_hubble_ui_image_tag: "v0.9.2"
+cilium_hubble_ui_image_tag: "v0.11.0"
 cilium_hubble_ui_backend_image_repo: "{{ quay_image_repo }}/cilium/hubble-ui-backend"
-cilium_hubble_ui_backend_image_tag: "v0.9.2"
+cilium_hubble_ui_backend_image_tag: "v0.11.0"
 cilium_hubble_envoy_image_repo: "{{ docker_image_repo }}/envoyproxy/envoy"
 cilium_hubble_envoy_image_tag: "v1.22.5"
 kube_ovn_container_image_repo: "{{ docker_image_repo }}/kubeovn/kube-ovn"
@@ -1053,7 +1053,7 @@ multus_image_repo: "{{ github_image_repo }}/k8snetworkplumbingwg/multus-cni"
 multus_image_tag: "{{ multus_version }}"
 
 kube_vip_image_repo: "{{ github_image_repo }}/kube-vip/kube-vip"
-kube_vip_image_tag: v0.5.11
+kube_vip_image_tag: v0.5.12
 nginx_image_repo: "{{ docker_image_repo }}/library/nginx"
 nginx_image_tag: 1.23.2-alpine
 haproxy_image_repo: "{{ docker_image_repo }}/library/haproxy"
@@ -1072,14 +1072,14 @@ nodelocaldns_version: "1.22.18"
 nodelocaldns_image_repo: "{{ kube_image_repo }}/dns/k8s-dns-node-cache"
 nodelocaldns_image_tag: "{{ nodelocaldns_version }}"
 
-dnsautoscaler_version: 1.8.5
-dnsautoscaler_image_repo: "{{ kube_image_repo }}/cpa/cluster-proportional-autoscaler-{{ image_arch }}"
+dnsautoscaler_version: v1.8.8
+dnsautoscaler_image_repo: "{{ kube_image_repo }}/cpa/cluster-proportional-autoscaler"
 dnsautoscaler_image_tag: "{{ dnsautoscaler_version }}"
 
 registry_version: "2.8.1"
 registry_image_repo: "{{ docker_image_repo }}/library/registry"
 registry_image_tag: "{{ registry_version }}"
-metrics_server_version: "v0.6.2"
+metrics_server_version: "v0.6.3"
 metrics_server_image_repo: "{{ kube_image_repo }}/metrics-server/metrics-server"
 metrics_server_image_tag: "{{ metrics_server_version }}"
 local_volume_provisioner_version: "v2.5.0"
@@ -1101,7 +1101,7 @@ ingress_nginx_kube_webhook_certgen_image_repo: "{{ kube_image_repo }}/ingress-ng
 ingress_nginx_kube_webhook_certgen_image_tag: "v20230312-helm-chart-4.5.2-28-g66a760794"
 alb_ingress_image_repo: "{{ docker_image_repo }}/amazon/aws-alb-ingress-controller"
 alb_ingress_image_tag: "v1.1.9"
-cert_manager_version: "v1.11.0"
+cert_manager_version: "v1.11.1"
 cert_manager_controller_image_repo: "{{ quay_image_repo }}/jetstack/cert-manager-controller"
 cert_manager_controller_image_tag: "{{ cert_manager_version }}"
 cert_manager_cainjector_image_repo: "{{ quay_image_repo }}/jetstack/cert-manager-cainjector"
@@ -1166,7 +1166,7 @@ dashboard_metrics_scraper_tag: "v1.0.8"
 
 metallb_speaker_image_repo: "{{ quay_image_repo }}/metallb/speaker"
 metallb_controller_image_repo: "{{ quay_image_repo }}/metallb/controller"
-metallb_version: v0.12.1
+metallb_version: v0.13.9
 
 downloads:
   netcheck_server:
